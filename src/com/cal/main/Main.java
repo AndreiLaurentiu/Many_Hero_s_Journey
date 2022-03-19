@@ -7,7 +7,7 @@ import com.cal.classes.Weapon;
 
 public class Main {
     public static void main(String[] args) {
-        Weapon shortSword = new Weapon("Short sword", "basic", 0);
+        Weapon shortSword = new Weapon("Short sword", "basic", 0, 3, 100);
         try {
             Swordsman swordsman = new Swordsman(shortSword);
             Archer archer = new Archer(shortSword);

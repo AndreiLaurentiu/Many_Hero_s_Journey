@@ -1,6 +1,7 @@
 package com.cal.classes;
 
 public class Apprentice implements Hero{
+    int healthPoints = 80;
     final int baseDamage = 3;
     final int baseArmorLevel = 1;
     int realDamage;
@@ -12,7 +13,7 @@ public class Apprentice implements Hero{
     }
 
     Apprentice(Weapon weapon) throws CloneNotSupportedException {
-        if(weapon.getClassId() != 0){
+        if(weapon.getClassId() != 2){
             throw new RuntimeException("An apprentice only uses magic weapons!");
         }
         this.weapon = new Weapon();
@@ -25,7 +26,17 @@ public class Apprentice implements Hero{
     }
 
     @Override
-    public void getHealed(int HealPotion){
+    public void getHealed(int healPotion){
+
+    }
+
+    @Override
+    public void getDamaged(Enemy enemy) {
+        this.healthPoints -=  enemy.doDamage();
+    }
+
+    @Override
+    public void getCoins() {
 
     }
 }

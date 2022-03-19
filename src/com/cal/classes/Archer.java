@@ -1,6 +1,7 @@
 package com.cal.classes;
 
 public class Archer implements Hero{
+    int healthPoints = 90;
     final int baseDamage = 4;
     final int baseArmorLevel = 2;
     int realDamage;
@@ -25,7 +26,17 @@ public class Archer implements Hero{
     }
 
     @Override
-    public void getHealed(int HealPotion){
+    public void getHealed(int healPotion){
+
+    }
+
+    @Override
+    public void getDamaged(Enemy enemy) {
+        this.healthPoints -=  enemy.doDamage();
+    }
+
+    @Override
+    public void getCoins() {
 
     }
 }
